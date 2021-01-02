@@ -1,15 +1,55 @@
 .say{
     @include container;
-    h2{
-        margin-left: auto
+    max-width: 570px;
+
+    h1{
+        margin: .9rem 0;
+        color: $orange-color;
     }
 
     form{
         @include flex-column;
     }
 
-    input[type="text"]{
+    textarea{
         width: 100%;
-        min-height: 240px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 1rem;
+        resize: none;
+        border-radius: .7rem;
+        border: 0;
+        background-color: $half-white;
+        ::placeholder{
+            color: rgb(180, 176, 176);
+            font-size: large;
+            font-weight: 480;
+        }
+        &:focus{
+            @include box-shadow;
+        }
+    }
+
+    .buttonSection{
+        @include flex-end;
+        margin: 0.7rem;
+        margin-top: -1.5rem;
+        button{
+            background-color: $orange-color;
+            font-size: 1.5rem;
+            font-weight: 580;
+            cursor: pointer;
+            padding: .6rem;
+            border: 0;
+            border-radius: .5rem;
+            &:focus{
+                @include box-shadow;
+            }
+        }
+        // left: 80%;
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
     }
 }

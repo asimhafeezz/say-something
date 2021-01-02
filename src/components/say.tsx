@@ -1,23 +1,33 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export const Say: React.FC = () => {
     //local states
     const [sayText, setSayText] = useState<string>("")
+    //ref
+    const textareaRef = useRef<HTMLTextAreaElement>(null)
 
-    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    //run on render useEffect hook
+    useEffect(()=>{
+        textareaRef.current?.focus()
+    },[])
+
+    const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
         setSayText(e.target.value)
     } 
 
-    const onSubmitHandler = (): void => {
+    const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>): void => {
+        e.preventDefault()
         console.log('text')
     }
     return(
         <div className="say">
-            <h2>Say Something</h2>
+            <h1>Say Something...</h1>
+            <section className="formRoot">
             <form onSubmit={onSubmitHandler}>
-                <input type="text" multiple name="sayText" value={sayText} onChange={onChangeHandler} />
-                <div><button>Say!</button></div>
+                <textarea rows={10} ref={textareaRef} placeholder="write something to say something..." name="sayText" value={sayText} onChange={onChangeHandler} />
+                <div className="buttonSection"><button>Say</button></div>
             </form>
+            </section>
         </div>
     )
 }
