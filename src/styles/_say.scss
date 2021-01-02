@@ -1,0 +1,15 @@
+.say{
+    @include container;
+    h2{
+        margin-left: auto
+    }
+
+    form{
+        @include flex-column;
+    }
+
+    input[type="text"]{
+        width: 100%;
+        min-height: 240px;
+    }
+}
