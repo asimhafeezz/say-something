@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { createSaying } from "../firebase/db"
 
 export const Say: React.FC = () => {
     //local states
@@ -17,6 +18,8 @@ export const Say: React.FC = () => {
 
     const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
+        const createdAt: Date = new Date()
+        createSaying({saying: sayText, starCount: 0 , createdAt})
         console.log('text')
     }
     return(

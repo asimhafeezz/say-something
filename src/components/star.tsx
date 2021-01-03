@@ -1,4 +1,4 @@
-import starURL from './star.png'
+import starURL from './icons/star.png'
 interface PropsI {
     starCount: number
 }

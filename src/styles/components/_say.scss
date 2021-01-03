@@ -26,9 +26,9 @@
             font-size: 1.2rem;
             font-weight: 480;
         }
-        &:focus{
-            // @include box-shadow;
-        }
+        // &:focus{
+        //     @include box-shadow;
+        // }
     }
 
     .buttonSection{
@@ -37,16 +37,16 @@
         margin-top: -1.5rem;
         button{
             background-color: $light-pink;
-            font-size: 1.5rem;
-            font-weight: 580;
+            font-size: 1.3rem;
+            font-weight: 560;
             cursor: pointer;
             padding: .6rem;
             border: 0;
             color: $dark;
             border-radius: .5rem;
-            &:focus{
-                @include box-shadow;
-            }
+            // &:focus{
+            //     @include box-shadow;
+            // }
         }
         // left: 80%;
     }
