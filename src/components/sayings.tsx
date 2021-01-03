@@ -17,6 +17,7 @@ const Saying:React.FC<DataI> = ({saying, starCount}) => {
 
 export const Sayings: React.FC = () => {
     return(
+        <div className="sayingsContainer">
         <div className="sayings">
             {
                 data.map(({saying , starCount},i) => {
@@ -25,6 +26,7 @@ export const Sayings: React.FC = () => {
                     )
                 })
             }
+        </div>
         </div>
     )
 }

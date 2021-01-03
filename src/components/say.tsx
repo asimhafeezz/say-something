@@ -25,7 +25,7 @@ export const Say: React.FC = () => {
             <section className="formRoot">
             <form onSubmit={onSubmitHandler}>
                 <textarea rows={10} ref={textareaRef} placeholder="write something to say something..." name="sayText" value={sayText} onChange={onChangeHandler} />
-                <div className="buttonSection"><button>Say</button></div>
+                <div className="buttonSection"><button>Say It!</button></div>
             </form>
             </section>
         </div>

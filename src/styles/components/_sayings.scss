@@ -1,7 +1,8 @@
-.sayings{
+.sayingsContainer{
     @include container;
+    .sayings{
     @include cards-grid;
-
+    margin: 2rem 0;
     .card{
         @include flex-end;
         flex-direction: column;
@@ -28,4 +29,4 @@
         }
     }
 
-}
+}}

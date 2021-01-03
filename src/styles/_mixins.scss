@@ -21,24 +21,39 @@
 
 @mixin card {
     padding: .6rem;
-    background-color: $dark-white;
+    background-color: $less-dark;
     border-radius: .5rem;
+    color: $white;
     @content
 }
 
 @mixin cards-grid {
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
-    gap: 0.5rem;
+    gap: 0.6rem;
+    @include smallerThan800 {
+        grid-template-columns: repeat(2 , 1fr);
+    }
+    @include smallerThan600 {
+        grid-template-columns: repeat(1 , 1fr);
+    }
 }
 
 @mixin box-shadow {
-    -webkit-box-shadow: 0px 1px 7px 0px $orange-color;
-    -moz-box-shadow: 0px 1px 7px 0px $orange-color;
-    box-shadow: 0px 1px 7px 0px $orange-color;
+    -webkit-box-shadow: 0px 1px 1px 0px $light-pink;
+    -moz-box-shadow: 0px 1px 1px 0px $light-pink;
+    box-shadow: 0px 1px 1px 0px $light-pink;
 }
 
-@mixin smallerThan768 {
+//media quries
+
+@mixin smallerThan800 {
+    @media (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin smallerThan600 {
     @media (max-width: 600px){
         @content;
     }

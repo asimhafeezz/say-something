@@ -4,7 +4,7 @@
 
     h1{
         margin: .9rem 0;
-        color: $orange-color;
+        color: $light-pink;
     }
 
     form{
@@ -18,15 +18,16 @@
         padding: 1rem;
         resize: none;
         border-radius: .7rem;
+        color: $white;
         border: 0;
-        background-color: $half-white;
-        ::placeholder{
-            color: rgb(180, 176, 176);
-            font-size: large;
+        background-color: $light;
+        &::placeholder{
+            color: $light-pink;
+            font-size: 1.2rem;
             font-weight: 480;
         }
         &:focus{
-            @include box-shadow;
+            // @include box-shadow;
         }
     }
 
@@ -35,13 +36,13 @@
         margin: 0.7rem;
         margin-top: -1.5rem;
         button{
-            background-color: $orange-color;
+            background-color: $light-pink;
             font-size: 1.5rem;
             font-weight: 580;
             cursor: pointer;
             padding: .6rem;
             border: 0;
-            color: $background-color;
+            color: $dark;
             border-radius: .5rem;
             &:focus{
                 @include box-shadow;
