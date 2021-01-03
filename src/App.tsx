@@ -1,10 +1,11 @@
-import { Say } from './components';
+import { Say, Sayings } from './components';
 import './styles/index.scss';
 
 const App: React.FC = () => {
   return(
-    <div className="App">
+    <div>
       <Say />
+      <Sayings />
     </div>
   )
 }

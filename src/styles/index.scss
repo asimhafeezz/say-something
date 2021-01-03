@@ -1,6 +1,10 @@
-@import 'mixins';
 @import 'variables';
+@import 'mixins';
 @import 'global';
 
+//images and icons
+@import 'images-icons';
+
 //components
-@import 'say';
+@import './components/say';
+@import './components/sayings';

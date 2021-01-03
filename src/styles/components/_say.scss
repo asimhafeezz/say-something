@@ -41,6 +41,7 @@
             cursor: pointer;
             padding: .6rem;
             border: 0;
+            color: $background-color;
             border-radius: .5rem;
             &:focus{
                 @include box-shadow;

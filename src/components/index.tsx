@@ -1,3 +1,4 @@
 import { Say } from "./say";
+import {Sayings} from './sayings'
 
-export {Say}
+export {Say , Sayings}

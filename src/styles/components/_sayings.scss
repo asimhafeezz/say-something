@@ -1,0 +1,31 @@
+.sayings{
+    @include container;
+    @include cards-grid;
+
+    .card{
+        @include flex-end;
+        flex-direction: column;
+        @include card{
+            p{
+                font-size: 1.1rem;
+                font-weight: 500;
+                flex: 1;
+            }
+        }
+        .starRootDiv{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+    }
+
+    .star{
+        @include flex-end;
+        img{
+            cursor: pointer;
+            margin-right: .3rem;
+            margin-top: 8px;
+        }
+    }
+
+}
