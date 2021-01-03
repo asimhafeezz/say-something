@@ -32,7 +32,7 @@ export const Say: React.FC = () => {
             <h1>Say Something...</h1>
             <section className="formRoot">
             <form onSubmit={onSubmitHandler}>
-                <textarea rows={10} ref={textareaRef} placeholder="write something to say something..." name="sayText" value={sayText} onChange={onChangeHandler} />
+                <textarea rows={6} ref={textareaRef} placeholder="write something to say something..." name="sayText" value={sayText} onChange={onChangeHandler} />
                 <div className="buttonSection"><button>Say It!</button></div>
             </form>
             </section>
