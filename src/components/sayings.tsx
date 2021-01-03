@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getAllSayings } from "../firebase/db"
 import { Star } from "./star"
 import moment from 'moment'
+import { Spinner } from "./util"
 
 //interfaces
 export interface DataI {
@@ -26,15 +27,16 @@ const Saying:React.FC<DataI> = ({id, saying, starCount, createdAt}) => {
 export const Sayings: React.FC = () => {
     //localStates
     const [data, setData] = useState<DataI[]>([])
+    const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(()=>{
         const unsub = () => {
-            getAllSayings(setData)
+            getAllSayings(setData, setLoading)
         }
 
         return unsub()
     },[])
-    return(
+    return loading ? <Spinner /> : (
         <div className="sayingsContainer">
         <div className="sayings">
             {

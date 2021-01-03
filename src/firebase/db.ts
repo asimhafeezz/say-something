@@ -18,13 +18,15 @@ export const createSaying = async (dataToPost: sayingI): Promise<void> => {
     }
 }
 
-export const getAllSayings = async (setData: React.Dispatch<React.SetStateAction<DataI[]>>): Promise<void> => {
+export const getAllSayings = async (setData: React.Dispatch<React.SetStateAction<DataI[]>>, setLoading: React.Dispatch<React.SetStateAction<boolean>>): Promise<void> => {
     firestore.collection('sayings').orderBy('createdAt' , 'desc').onSnapshot(snapShot =>{
             const result = 
             snapShot
             .docs
             .map(item => ({id: item.id, saying: item.data().saying,starCount: item.data().starCount , createdAt: item.data().createdAt}))
             setData(result)
+            console.log('result')
+            setLoading(false)
         })
 }
 
