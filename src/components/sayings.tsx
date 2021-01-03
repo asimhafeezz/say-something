@@ -29,6 +29,7 @@ export const Sayings: React.FC = () => {
     const [data, setData] = useState<DataI[]>([])
     const [loading, setLoading] = useState<boolean>(true)
 
+    //run on render
     useEffect(()=>{
         const unsub = () => {
             getAllSayings(setData, setLoading)
@@ -36,6 +37,7 @@ export const Sayings: React.FC = () => {
 
         return unsub()
     },[])
+
     return loading ? <Spinner /> : (
         <div className="sayingsContainer">
         <div className="sayings">
