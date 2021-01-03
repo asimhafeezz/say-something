@@ -3,8 +3,9 @@
     max-width: 570px;
 
     h1{
-        margin: .9rem 0;
+        margin: 1rem 0;
         color: $light-pink;
+        font-weight: 580
     }
 
     form{
@@ -21,14 +22,18 @@
         color: $white;
         border: 0;
         background-color: $light;
+        transition: box-shadow 0.25s;
         &::placeholder{
             color: $light-pink;
             font-size: 1.2rem;
             font-weight: 480;
         }
-        // &:focus{
-        //     @include box-shadow;
-        // }
+        &:focus{
+            @include box-shadow;
+        }
+
+        //animation
+        @include fade-animation;
     }
 
     .buttonSection{
@@ -37,6 +42,7 @@
         margin-top: -1.5rem;
         button{
             background-color: $light-pink;
+            transition: transform 0.25s;
             font-size: 1.3rem;
             font-weight: 560;
             cursor: pointer;
@@ -44,9 +50,13 @@
             border: 0;
             color: $dark;
             border-radius: .5rem;
-            // &:focus{
-            //     @include box-shadow;
-            // }
+            z-index: 100;
+            &:focus{
+                @include box-shadow;
+            }
+            &:hover{
+                transform: translateY(-3px)
+            }
         }
         // left: 80%;
     }
@@ -55,3 +65,4 @@
         display: none;
     }
 }
+

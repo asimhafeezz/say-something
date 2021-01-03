@@ -1,4 +1,5 @@
 
+import { DataI } from "../components/sayings"
 import { firestore } from "./firebase"
 
 interface sayingI {
@@ -10,23 +11,23 @@ interface sayingI {
 
 export const createSaying = async (dataToPost: sayingI): Promise<void> => {
     try{
-        const createPost = await firestore.collection('sayings').add(dataToPost)
-        console.log('post created.', createPost)
+        await firestore.collection('sayings').add(dataToPost)
     }catch (e: any){
         let err: Error = e
         console.log(err)
     }
 }
 
-export const getAllSayings = async (setData: React.Dispatch<React.SetStateAction<sayingI[]>>): Promise<void> => {
-    try{
-        firestore.collection('sayings').onSnapshot(snapShot =>{
-            const result = snapShot.docs.map(item => ({id: item.id, saying: item.data().saying,starCount: item.data().starCount , createdAt: item.data().createdAt}))
-            console.log('this is result...' , result)
+export const getAllSayings = async (setData: React.Dispatch<React.SetStateAction<DataI[]>>): Promise<void> => {
+    firestore.collection('sayings').orderBy('createdAt' , 'desc').onSnapshot(snapShot =>{
+            const result = 
+            snapShot
+            .docs
+            .map(item => ({id: item.id, saying: item.data().saying,starCount: item.data().starCount , createdAt: item.data().createdAt}))
             setData(result)
         })
-    }catch(e: any){
-        let err: Error = e
-        console.log(err)
-    }
+}
+
+export const updateStars = (id: string, starCount: number): void => {
+    firestore.doc(`sayings/${id}`).update({starCount: starCount + 1})
 }

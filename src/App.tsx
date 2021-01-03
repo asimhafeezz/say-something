@@ -1,4 +1,4 @@
-import { Say, Sayings } from './components';
+import { Say, Sayings, Footer } from './components';
 import './styles/index.scss';
 
 const App: React.FC = () => {
@@ -6,6 +6,7 @@ const App: React.FC = () => {
     <div>
       <Say />
       <Sayings />
+      <Footer />
     </div>
   )
 }

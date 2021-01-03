@@ -1,13 +1,21 @@
 .sayingsContainer{
     @include container;
+
     .sayings{
+
     @include cards-grid;
     margin: 2rem 0;
+
     .card{
         @include flex-end;
         flex-direction: column;
+
+        //animation
+    @include fade-translate-animation;
+
         @include card{
             p{
+                word-wrap: break-word;
                 font-size: 1.1rem;
                 font-weight: 500;
                 flex: 1;
@@ -22,6 +30,9 @@
                 font-size: .9rem;
                 font-weight: 300;
             }
+            .date{
+                font-size: .7rem;
+            }
         }
     }
 
@@ -30,8 +41,9 @@
         img{
             cursor: pointer;
             margin-right: .3rem;
-            margin-top: 8px;
+            margin-top: 10px;
         }
     }
 
 }}
+
