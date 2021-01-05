@@ -7,12 +7,14 @@
         color: $light-pink;
         font-weight: 580
     }
-
+    
     form{
         @include flex-column;
     }
-
+    
     textarea{
+        // animation
+        @include fade-animation;
         width: 100%;
         font-size: 1.6rem;
         font-weight: 500;
@@ -32,8 +34,6 @@
             @include box-shadow;
         }
 
-        //animation
-        // @include fade-animation;
     }
 
     .buttonSection{

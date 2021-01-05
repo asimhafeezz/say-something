@@ -10,9 +10,6 @@
         @include flex-end;
         flex-direction: column;
 
-        //animation
-    // @include fade-translate-animation;
-
         @include card{
             p{
                 word-wrap: break-word;
