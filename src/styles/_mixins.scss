@@ -26,7 +26,7 @@
     color: $white;
     min-width: 0;
     //animation
-    @include fade-translate-animation;
+    // @include fade-translate-animation;
     @content
 }
 
@@ -53,12 +53,30 @@
     animation-name: animationFade;
     animation-fill-mode: forwards;
     animation-duration: 1.2s;
+
+    @keyframes animationFade {
+        0% {
+            opacity: 0;
+        }
+        100% {opacity: 100%;}
+      }
 }
 
 @mixin fade-translate-animation {
     animation-name: animationTranslateY;
     animation-fill-mode: forwards;
     animation-duration: 1.2s;
+
+    @keyframes animationTranslateY {
+        0% {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        100% {
+            opacity: 100%;
+            transform: translateY(0px);
+        }
+      }
 }
 
 
