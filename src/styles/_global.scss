@@ -1,3 +1,23 @@
+//animations
+@keyframes animationTranslateY {
+  0% {
+      opacity: 0;
+      transform: translateY(15px);
+  }
+  100% {
+      opacity: 100%;
+      transform: translateY(0px);
+  }
+}
+
+@keyframes animationFade {
+  0% {
+      opacity: 0;
+  }
+  100% {opacity: 100%;}
+}
+
+//global 
 *,*::after,*::before{
     box-sizing: border-box;
     margin: 0;
