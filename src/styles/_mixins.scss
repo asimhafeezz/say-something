@@ -55,10 +55,10 @@
     animation-duration: 1.2s;
 
     @keyframes animationFade {
-        from {
+        0% {
             opacity: 0;
         }
-        to {opacity: 100%;}
+        100% {opacity: 100%;}
       }
 }
 
@@ -68,11 +68,11 @@
     animation-duration: 1.2s;
 
     @keyframes animationTranslateY {
-        from {
+        0% {
             opacity: 0;
             transform: translateY(15px);
         }
-        to {
+        100% {
             opacity: 100%;
             transform: translateY(0px);
         }
