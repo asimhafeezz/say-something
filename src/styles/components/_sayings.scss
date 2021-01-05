@@ -11,7 +11,7 @@
         flex-direction: column;
 
         //animation
-    @include fade-translate-animation;
+    // @include fade-translate-animation;
 
         @include card{
             p{
